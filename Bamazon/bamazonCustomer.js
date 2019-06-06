@@ -30,7 +30,7 @@ const makeTable = function(){
         .then(function(answer){
           for (var i = 0; i < response.length; i++){
               if (response[i].productName = answer.choose){
-                  correct = true;
+                  answer = true;
                   const product = answer.choose;
                   const id = i;
         inquirer.prompt({
@@ -57,7 +57,10 @@ const makeTable = function(){
         })
     }
 }
-
+if (i == response.length && answer == false){
+    console.log("Sorry we don't have that in stock. Place another purchase");
+    chooseProduct(response);  
+}
 })
 }
 }
